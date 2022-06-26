@@ -11,6 +11,10 @@ func (reader *Reader) Read(length int) []byte {
 	return cursor
 }
 
+func (reader *Reader) ReadSingle() byte {
+	return reader.Read(1)[0]
+}
+
 func New(raw []byte) Reader {
 	return Reader{raw}
 }
